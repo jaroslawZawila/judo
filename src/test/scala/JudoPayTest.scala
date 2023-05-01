@@ -21,4 +21,12 @@ class JudoPayTest extends AnyFlatSpec with Matchers {
     lengthOfLongestSubstring(string) shouldBe 1
   }
 
+  it should "handle 3 different characters" in {
+    lengthOfLongestSubstring("abc") shouldBe 3
+  }
+
+  it should "handle repeated pattern of characters" in {
+    lengthOfLongestSubstring("abcabcabcc") shouldBe 3
+  }
+
 }
