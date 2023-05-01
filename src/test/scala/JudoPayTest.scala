@@ -1,5 +1,7 @@
 import org.scalatest.flatspec.AnyFlatSpec
-import org.scalatest.matchers.should.Matchers;
+import org.scalatest.matchers.should.Matchers
+
+import scala.util.Random;
 
 class JudoPayTest extends AnyFlatSpec with Matchers {
 
@@ -11,6 +13,12 @@ class JudoPayTest extends AnyFlatSpec with Matchers {
 
   it should "return 1 for single element" in {
     lengthOfLongestSubstring("a") shouldBe 1
+  }
+
+  it should "return 1 for string of the same character" in {
+    val string = List.iterate('A', Random.nextInt(1000))(identity).mkString("")
+
+    lengthOfLongestSubstring(string) shouldBe 1
   }
 
 }
